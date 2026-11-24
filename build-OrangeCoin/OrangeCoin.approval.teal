@@ -32,79 +32,79 @@ abi_route_createApplication:
 createApplication:
 	proto 0 0
 
-	// src/OrangeCoin.algo.ts:43
+	// src/OrangeCoin.algo.ts:45
 	// this.token.value = Asset.zeroIndex
 	byte 0x746f6b656e // "token"
 	int 0
 	app_global_put
 
-	// src/OrangeCoin.algo.ts:44
+	// src/OrangeCoin.algo.ts:46
 	// this.block.value = 0
 	byte 0x626c6f636b // "block"
 	int 0
 	app_global_put
 
-	// src/OrangeCoin.algo.ts:46
+	// src/OrangeCoin.algo.ts:48
 	// this.totalEffort.value = 0
 	byte 0x746f74616c5f6566666f7274 // "total_effort"
 	int 0
 	app_global_put
 
-	// src/OrangeCoin.algo.ts:47
+	// src/OrangeCoin.algo.ts:49
 	// this.totalTransactions.value = 0
 	byte 0x746f74616c5f7472616e73616374696f6e73 // "total_transactions"
 	int 0
 	app_global_put
 
-	// src/OrangeCoin.algo.ts:49
+	// src/OrangeCoin.algo.ts:51
 	// this.halving.value = 0
 	byte 0x68616c76696e67 // "halving"
 	int 0
 	app_global_put
 
-	// src/OrangeCoin.algo.ts:50
+	// src/OrangeCoin.algo.ts:52
 	// this.halvingSupply.value = TOKEN_SUPPLY / 2
 	byte 0x68616c76696e675f737570706c79 // "halving_supply"
 	int 200000000000000
 	app_global_put
 
-	// src/OrangeCoin.algo.ts:51
+	// src/OrangeCoin.algo.ts:53
 	// this.minedSupply.value = 0
 	byte 0x6d696e65645f737570706c79 // "mined_supply"
 	int 0
 	app_global_put
 
-	// src/OrangeCoin.algo.ts:52
+	// src/OrangeCoin.algo.ts:54
 	// this.minerReward.value = MINER_REWARD
 	byte 0x6d696e65725f726577617264 // "miner_reward"
 	int 1_04857600
 	app_global_put
 
-	// src/OrangeCoin.algo.ts:54
+	// src/OrangeCoin.algo.ts:56
 	// this.lastMiner.value = Address.zeroAddress
 	byte 0x6c6173745f6d696e6572 // "last_miner"
 	global ZeroAddress
 	app_global_put
 
-	// src/OrangeCoin.algo.ts:55
+	// src/OrangeCoin.algo.ts:57
 	// this.lastMinerEffort.value = 0
 	byte 0x6c6173745f6d696e65725f6566666f7274 // "last_miner_effort"
 	int 0
 	app_global_put
 
-	// src/OrangeCoin.algo.ts:57
+	// src/OrangeCoin.algo.ts:59
 	// this.currentMiner.value = Address.zeroAddress
 	byte 0x63757272656e745f6d696e6572 // "current_miner"
 	global ZeroAddress
 	app_global_put
 
-	// src/OrangeCoin.algo.ts:58
+	// src/OrangeCoin.algo.ts:60
 	// this.currentMinerEffort.value = 0
 	byte 0x63757272656e745f6d696e65725f6566666f7274 // "current_miner_effort"
 	int 0
 	app_global_put
 
-	// src/OrangeCoin.algo.ts:60
+	// src/OrangeCoin.algo.ts:62
 	// this.startTimestamp.value = START_TIMESTAMP
 	byte 0x73746172745f74696d657374616d70 // "start_timestamp"
 	int 1704067200
@@ -114,7 +114,7 @@ createApplication:
 createAsset:
 	proto 0 0
 
-	// src/OrangeCoin.algo.ts:64
+	// src/OrangeCoin.algo.ts:66
 	// this.token.value = sendAssetCreation({
 	//       configAssetName: 'Orange',
 	//       configAssetUnitName: 'ORA',
@@ -134,62 +134,62 @@ createAsset:
 	int acfg
 	itxn_field TypeEnum
 
-	// src/OrangeCoin.algo.ts:65
+	// src/OrangeCoin.algo.ts:67
 	// configAssetName: 'Orange'
 	byte 0x4f72616e6765 // "Orange"
 	itxn_field ConfigAssetName
 
-	// src/OrangeCoin.algo.ts:66
+	// src/OrangeCoin.algo.ts:68
 	// configAssetUnitName: 'ORA'
 	byte 0x4f5241 // "ORA"
 	itxn_field ConfigAssetUnitName
 
-	// src/OrangeCoin.algo.ts:67
+	// src/OrangeCoin.algo.ts:69
 	// configAssetManager: this.app.address
 	global CurrentApplicationAddress
 	itxn_field ConfigAssetManager
 
-	// src/OrangeCoin.algo.ts:68
+	// src/OrangeCoin.algo.ts:70
 	// configAssetReserve: this.app.address
 	global CurrentApplicationAddress
 	itxn_field ConfigAssetReserve
 
-	// src/OrangeCoin.algo.ts:69
+	// src/OrangeCoin.algo.ts:71
 	// configAssetFreeze: Address.zeroAddress
 	global ZeroAddress
 	itxn_field ConfigAssetFreeze
 
-	// src/OrangeCoin.algo.ts:70
+	// src/OrangeCoin.algo.ts:72
 	// configAssetClawback: Address.zeroAddress
 	global ZeroAddress
 	itxn_field ConfigAssetClawback
 
-	// src/OrangeCoin.algo.ts:71
+	// src/OrangeCoin.algo.ts:73
 	// configAssetTotal: TOKEN_SUPPLY
 	int 4000000_00000000
 	itxn_field ConfigAssetTotal
 
-	// src/OrangeCoin.algo.ts:72
+	// src/OrangeCoin.algo.ts:74
 	// configAssetDecimals: TOKEN_DECIMALS
 	int 8
 	itxn_field ConfigAssetDecimals
 
-	// src/OrangeCoin.algo.ts:73
+	// src/OrangeCoin.algo.ts:75
 	// configAssetURL: IFPS_URL
 	byte 0x697066733a2f2f516d556974784a75504a4a726375416441695664454570757a476d73454c47674176684c643546695852536845752361726333 // "ipfs://QmUitxJuPJJrcuAdAiVdEEpuzGmsELGgAvhLd5FiXRShEu#arc3"
 	itxn_field ConfigAssetURL
 
-	// src/OrangeCoin.algo.ts:74
+	// src/OrangeCoin.algo.ts:76
 	// configAssetMetadataHash: rawBytes(IFPS_HASH)
 	byte 0xd3fd51be2ee8c2b17a7ae826d349c0df20feab8a4d680303401c741560c32436
 	itxn_field ConfigAssetMetadataHash
 
-	// src/OrangeCoin.algo.ts:75
+	// src/OrangeCoin.algo.ts:77
 	// fee: 0
 	int 0
 	itxn_field Fee
 
-	// src/OrangeCoin.algo.ts:76
+	// src/OrangeCoin.algo.ts:78
 	// note: NOTE
 	byte 0x4a6f686e20416c616e20576f6f64732030312f4465632f3230323320596f75206b6e6f772c20492063616e2070756c6c206d657472696373206f7574206f66207468652061697220746f6f2c2077686174657665722c2038206d696c6c696f6e207472616e73616374696f6e73206f76657220746865206c617374207765656b2c204920646f6e2774206b6e6f772c206d79206d6f6d2068617320666f7572206f72616e6765732e // "John Alan Woods 01/Dec/2023 You know, I can pull metrics out of the air too, whatever, 8 million transactions over the last week, I don't know, my mom has four oranges."
 	itxn_field Note
@@ -211,7 +211,7 @@ useLocalState:
 	proto 0 0
 
 	// if0_condition
-	// src/OrangeCoin.algo.ts:82
+	// src/OrangeCoin.algo.ts:84
 	// this.token.value === Asset.zeroIndex
 	byte 0x746f6b656e // "token"
 	app_global_get
@@ -220,12 +220,12 @@ useLocalState:
 	bz if0_end
 
 	// if0_consequent
-	// src/OrangeCoin.algo.ts:83
+	// src/OrangeCoin.algo.ts:85
 	// this.createAsset()
 	callsub createAsset
 
 if0_end:
-	// src/OrangeCoin.algo.ts:86
+	// src/OrangeCoin.algo.ts:88
 	// this.minerEfforts(this.txn.sender).value = 0
 	txn Sender
 	byte 0x6566666f7274 // "effort"
@@ -236,7 +236,7 @@ if0_end:
 checkBlock:
 	proto 3 0
 
-	// src/OrangeCoin.algo.ts:90
+	// src/OrangeCoin.algo.ts:92
 	// currentBlock = globals.round - (globals.round % BLOCKS_TIMEOUT)
 	global Round
 	global Round
@@ -246,7 +246,7 @@ checkBlock:
 	frame_bury -1 // currentBlock: uint64
 
 	// if1_condition
-	// src/OrangeCoin.algo.ts:92
+	// src/OrangeCoin.algo.ts:94
 	// this.block.value !== currentBlock
 	byte 0x626c6f636b // "block"
 	app_global_get
@@ -256,7 +256,7 @@ checkBlock:
 
 	// if1_consequent
 	// if2_condition
-	// src/OrangeCoin.algo.ts:93
+	// src/OrangeCoin.algo.ts:95
 	// this.lastMiner.value.hasAsset(this.token.value)
 	byte 0x6c6173745f6d696e6572 // "last_miner"
 	app_global_get
@@ -268,7 +268,7 @@ checkBlock:
 	bz if2_end
 
 	// if2_consequent
-	// src/OrangeCoin.algo.ts:94
+	// src/OrangeCoin.algo.ts:96
 	// reward =
 	//           this.halvingSupply.value > this.minerReward.value
 	//             ? this.minerReward.value
@@ -290,7 +290,7 @@ ternary1_false:
 ternary1_end:
 	frame_bury -2 // reward: uint64
 
-	// src/OrangeCoin.algo.ts:99
+	// src/OrangeCoin.algo.ts:101
 	// sendAssetTransfer({
 	//           xferAsset: this.token.value,
 	//           assetReceiver: this.lastMiner.value,
@@ -300,19 +300,19 @@ ternary1_end:
 	int axfer
 	itxn_field TypeEnum
 
-	// src/OrangeCoin.algo.ts:100
+	// src/OrangeCoin.algo.ts:102
 	// xferAsset: this.token.value
 	byte 0x746f6b656e // "token"
 	app_global_get
 	itxn_field XferAsset
 
-	// src/OrangeCoin.algo.ts:101
+	// src/OrangeCoin.algo.ts:103
 	// assetReceiver: this.lastMiner.value
 	byte 0x6c6173745f6d696e6572 // "last_miner"
 	app_global_get
 	itxn_field AssetReceiver
 
-	// src/OrangeCoin.algo.ts:102
+	// src/OrangeCoin.algo.ts:104
 	// assetAmount: reward
 	frame_dig -2 // reward: uint64
 	itxn_field AssetAmount
@@ -324,7 +324,7 @@ ternary1_end:
 	// Submit inner transaction
 	itxn_submit
 
-	// src/OrangeCoin.algo.ts:105
+	// src/OrangeCoin.algo.ts:107
 	// log(concat(this.lastMiner.value, itob(this.lastMinerEffort.value)))
 	byte 0x6c6173745f6d696e6572 // "last_miner"
 	app_global_get
@@ -334,7 +334,7 @@ ternary1_end:
 	concat
 	log
 
-	// src/OrangeCoin.algo.ts:107
+	// src/OrangeCoin.algo.ts:109
 	// this.minedSupply.value = this.minedSupply.value + reward
 	byte 0x6d696e65645f737570706c79 // "mined_supply"
 	byte 0x6d696e65645f737570706c79 // "mined_supply"
@@ -343,7 +343,7 @@ ternary1_end:
 	+
 	app_global_put
 
-	// src/OrangeCoin.algo.ts:108
+	// src/OrangeCoin.algo.ts:110
 	// this.halvingSupply.value = this.halvingSupply.value - reward
 	byte 0x68616c76696e675f737570706c79 // "halving_supply"
 	byte 0x68616c76696e675f737570706c79 // "halving_supply"
@@ -353,7 +353,7 @@ ternary1_end:
 	app_global_put
 
 	// if3_condition
-	// src/OrangeCoin.algo.ts:110
+	// src/OrangeCoin.algo.ts:112
 	// this.halvingSupply.value === 0
 	byte 0x68616c76696e675f737570706c79 // "halving_supply"
 	app_global_get
@@ -362,7 +362,7 @@ ternary1_end:
 	bz if3_end
 
 	// if3_consequent
-	// src/OrangeCoin.algo.ts:111
+	// src/OrangeCoin.algo.ts:113
 	// this.halving.value = this.halving.value + 1
 	byte 0x68616c76696e67 // "halving"
 	byte 0x68616c76696e67 // "halving"
@@ -372,7 +372,7 @@ ternary1_end:
 	app_global_put
 
 	// if4_condition
-	// src/OrangeCoin.algo.ts:113
+	// src/OrangeCoin.algo.ts:115
 	// this.halving.value >= LAST_HALVING
 	byte 0x68616c76696e67 // "halving"
 	app_global_get
@@ -381,7 +381,7 @@ ternary1_end:
 	bz if4_else
 
 	// if4_consequent
-	// src/OrangeCoin.algo.ts:114
+	// src/OrangeCoin.algo.ts:116
 	// this.halvingSupply.value = TOKEN_SUPPLY - this.minedSupply.value
 	byte 0x68616c76696e675f737570706c79 // "halving_supply"
 	int 4000000_00000000
@@ -392,7 +392,7 @@ ternary1_end:
 	b if4_end
 
 if4_else:
-	// src/OrangeCoin.algo.ts:116
+	// src/OrangeCoin.algo.ts:118
 	// this.halvingSupply.value =
 	//               (TOKEN_SUPPLY - this.minedSupply.value) / 2
 	byte 0x68616c76696e675f737570706c79 // "halving_supply"
@@ -404,7 +404,7 @@ if4_else:
 	/
 	app_global_put
 
-	// src/OrangeCoin.algo.ts:118
+	// src/OrangeCoin.algo.ts:120
 	// this.minerReward.value = this.minerReward.value / 2
 	byte 0x6d696e65725f726577617264 // "miner_reward"
 	byte 0x6d696e65725f726577617264 // "miner_reward"
@@ -419,7 +419,7 @@ if3_end:
 
 if2_end:
 	// if5_condition
-	// src/OrangeCoin.algo.ts:123
+	// src/OrangeCoin.algo.ts:125
 	// this.lastMiner.value.isOptedInToApp(this.app)
 	byte 0x6c6173745f6d696e6572 // "last_miner"
 	app_global_get
@@ -428,7 +428,7 @@ if2_end:
 	bz if5_end
 
 	// if5_consequent
-	// src/OrangeCoin.algo.ts:124
+	// src/OrangeCoin.algo.ts:126
 	// effort = this.minerEfforts(this.lastMiner.value).value
 	byte 0x6c6173745f6d696e6572 // "last_miner"
 	app_global_get
@@ -436,7 +436,7 @@ if2_end:
 	app_local_get
 	frame_bury -3 // effort: uint64
 
-	// src/OrangeCoin.algo.ts:125
+	// src/OrangeCoin.algo.ts:127
 	// this.minerEfforts(this.lastMiner.value).value =
 	//           effort > this.lastMinerEffort.value
 	//             ? effort - this.lastMinerEffort.value
@@ -462,27 +462,27 @@ ternary2_end:
 	app_local_put
 
 if5_end:
-	// src/OrangeCoin.algo.ts:131
+	// src/OrangeCoin.algo.ts:133
 	// this.block.value = currentBlock
 	byte 0x626c6f636b // "block"
 	frame_dig -1 // currentBlock: uint64
 	app_global_put
 
-	// src/OrangeCoin.algo.ts:132
+	// src/OrangeCoin.algo.ts:134
 	// this.lastMiner.value = this.currentMiner.value
 	byte 0x6c6173745f6d696e6572 // "last_miner"
 	byte 0x63757272656e745f6d696e6572 // "current_miner"
 	app_global_get
 	app_global_put
 
-	// src/OrangeCoin.algo.ts:133
+	// src/OrangeCoin.algo.ts:135
 	// this.lastMinerEffort.value = this.currentMinerEffort.value
 	byte 0x6c6173745f6d696e65725f6566666f7274 // "last_miner_effort"
 	byte 0x63757272656e745f6d696e65725f6566666f7274 // "current_miner_effort"
 	app_global_get
 	app_global_put
 
-	// src/OrangeCoin.algo.ts:134
+	// src/OrangeCoin.algo.ts:136
 	// this.currentMinerEffort.value = 0
 	byte 0x63757272656e745f6d696e65725f6566666f7274 // "current_miner_effort"
 	int 0
@@ -511,7 +511,7 @@ abi_route_mine:
 mine:
 	proto 3 0
 
-	// src/OrangeCoin.algo.ts:139
+	// src/OrangeCoin.algo.ts:141
 	// assert(this.minerEfforts(to).exists)
 	frame_dig -1 // to: address
 	txna Applications 0
@@ -521,7 +521,7 @@ mine:
 	pop
 	assert
 
-	// src/OrangeCoin.algo.ts:140
+	// src/OrangeCoin.algo.ts:142
 	// assert(globals.latestTimestamp >= this.startTimestamp.value)
 	global LatestTimestamp
 	byte 0x73746172745f74696d657374616d70 // "start_timestamp"
@@ -529,7 +529,7 @@ mine:
 	>=
 	assert
 
-	// src/OrangeCoin.algo.ts:141
+	// src/OrangeCoin.algo.ts:143
 	// assert(this.halving.value <= LAST_HALVING)
 	byte 0x68616c76696e67 // "halving"
 	app_global_get
@@ -537,19 +537,19 @@ mine:
 	<=
 	assert
 
-	// src/OrangeCoin.algo.ts:142
+	// src/OrangeCoin.algo.ts:144
 	// assert(this.txn.fee <= 20000)
 	txn Fee
 	int 20000
 	<=
 	assert
 
-	// src/OrangeCoin.algo.ts:144
+	// src/OrangeCoin.algo.ts:146
 	// this.checkBlock()
 	byte 0x; dupn 2 // push empty bytes to fill the stack frame for this subroutine's local variables
 	callsub checkBlock
 
-	// src/OrangeCoin.algo.ts:146
+	// src/OrangeCoin.algo.ts:148
 	// this.totalEffort.value = this.totalEffort.value + this.txn.fee
 	byte 0x746f74616c5f6566666f7274 // "total_effort"
 	byte 0x746f74616c5f6566666f7274 // "total_effort"
@@ -558,7 +558,7 @@ mine:
 	+
 	app_global_put
 
-	// src/OrangeCoin.algo.ts:147
+	// src/OrangeCoin.algo.ts:149
 	// this.totalTransactions.value = this.totalTransactions.value + 1
 	byte 0x746f74616c5f7472616e73616374696f6e73 // "total_transactions"
 	byte 0x746f74616c5f7472616e73616374696f6e73 // "total_transactions"
@@ -567,7 +567,7 @@ mine:
 	+
 	app_global_put
 
-	// src/OrangeCoin.algo.ts:149
+	// src/OrangeCoin.algo.ts:151
 	// totalMinerEffort = this.minerEfforts(to).value + this.txn.fee
 	frame_dig -1 // to: address
 	byte 0x6566666f7274 // "effort"
@@ -576,20 +576,20 @@ mine:
 	+
 	frame_bury -2 // totalMinerEffort: uint64
 
-	// src/OrangeCoin.algo.ts:150
+	// src/OrangeCoin.algo.ts:152
 	// this.minerEfforts(to).value = totalMinerEffort
 	frame_dig -1 // to: address
 	byte 0x6566666f7274 // "effort"
 	frame_dig -2 // totalMinerEffort: uint64
 	app_local_put
 
-	// src/OrangeCoin.algo.ts:152
+	// src/OrangeCoin.algo.ts:154
 	// currentMinerEffort = totalMinerEffort
 	frame_dig -2 // totalMinerEffort: uint64
 	frame_bury -3 // currentMinerEffort: uint64
 
 	// if6_condition
-	// src/OrangeCoin.algo.ts:153
+	// src/OrangeCoin.algo.ts:155
 	// this.lastMiner.value === to
 	byte 0x6c6173745f6d696e6572 // "last_miner"
 	app_global_get
@@ -598,7 +598,7 @@ mine:
 	bz if6_end
 
 	// if6_consequent
-	// src/OrangeCoin.algo.ts:154
+	// src/OrangeCoin.algo.ts:156
 	// currentMinerEffort =
 	//         currentMinerEffort > this.lastMinerEffort.value
 	//           ? currentMinerEffort - this.lastMinerEffort.value
@@ -622,7 +622,7 @@ ternary3_end:
 
 if6_end:
 	// if7_condition
-	// src/OrangeCoin.algo.ts:160
+	// src/OrangeCoin.algo.ts:162
 	// currentMinerEffort > this.currentMinerEffort.value
 	frame_dig -3 // currentMinerEffort: uint64
 	byte 0x63757272656e745f6d696e65725f6566666f7274 // "current_miner_effort"
@@ -631,13 +631,13 @@ if6_end:
 	bz if7_end
 
 	// if7_consequent
-	// src/OrangeCoin.algo.ts:161
+	// src/OrangeCoin.algo.ts:163
 	// this.currentMiner.value = to
 	byte 0x63757272656e745f6d696e6572 // "current_miner"
 	frame_dig -1 // to: address
 	app_global_put
 
-	// src/OrangeCoin.algo.ts:162
+	// src/OrangeCoin.algo.ts:164
 	// this.currentMinerEffort.value = currentMinerEffort
 	byte 0x63757272656e745f6d696e65725f6566666f7274 // "current_miner_effort"
 	frame_dig -3 // currentMinerEffort: uint64
